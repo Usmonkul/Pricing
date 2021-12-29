@@ -1,4 +1,7 @@
 :root {
+  --main-bg-color: #F7F7FE;
+  --special-color: linear-gradient(135.06deg, #A2A7F0 -0.05%, #696EDD 100.05%);
+  --text-color: #6E728E;
 }
 
 /* GENERAL */
@@ -6,6 +9,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   scroll-behavior: smooth;
+  font-size: 10px;
 }
 
 *,
@@ -20,8 +24,10 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+
 }
 
 img {
@@ -43,9 +49,200 @@ img {
 
 /* CONTAINER */
 .container {
-  max-width: 900px;
+  max-width: 1150px;
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Pricing page */
+
+.main-content {
+  flex-grow: 1;
+}
+.pricing-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  background: url('/img/decoration-right.svg') top right no-repeat,
+  url('/img/decoration-left.svg') left bottom no-repeat;
+  background-size: 30% 60%;
+
+}
+.main-heading {
+  margin: 0;
+  font-size: 3.2rem;
+  line-height: 3.9rem;
+  margin-bottom: 4rem;
+}
+.membership-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6.4rem;
+}
+.membership-plan-text {
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  opacity: 0.5;
+}
+.plan-change-btn {
+  margin: 0rem 2.4rem;
+  width: 58px;
+  height: 32px;
+  border: none;
+  border-radius: 16px;
+  background: var(--special-color);
+  position: relative;
+  display: inline-block;
+}
+.plan-change-btn:hover {
+  opacity: 0.5;
+}
+.plan-change-btn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.button-toggler {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--special-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.button-toggler:before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .button-toggler {
+  background: var(--special-color);
+}
+
+input:focus + .button-toggler {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .button-toggler:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.button-toggler.round {
+  border-radius: 34px;
+}
+
+.button-toggler.round:before {
+  border-radius: 50%;
+}
+.membership-types-wrapper {
+  width: 1050px;
+}
+.membership-box-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.membership-box-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35rem;
+  background-color: #fff;
+  padding: 3.1rem;
+}
+.box1 {
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 10px 0px 0px 10px;
+}
+.box2 {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 10px;
+  background: var(--special-color);
+  color: #fff;
+  transform: 1s;
+}
+.box2 .membership-price {
+  color: #fff;
+}
+.box3 {
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 0px 10px 10px 0px;
+}
+.membership-type-heading {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  margin: 0;
+  margin-bottom: 2.4rem;
+}
+.membership-price {
+  margin: 0;
+  margin-bottom: 3.2rem;
+  font-size: 7.2rem;
+  line-height: 7.1rem;
+  letter-spacing: -2.16px;
+  color: #4A4D60;
+}
+.membership-benefits {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+.membership-benefits-text {
+  margin: 0;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  border-top: 1px solid rgba(110, 114, 142, 0.25);
+}
+.membership-benefits-text:last-child {
+  border-bottom: 1px solid rgba(110, 114, 142, 0.25);
+}
+.btn {
+  padding: 1.4rem 6.6rem;
+  color: #fff;
+  background: var(--special-color);
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: .5s;
+  border: 1px solid var(--special-color);
+}
+.btn:hover {
+  background: #FFF;
+  color: #696EDD;
+  border: 1px solid #696EDD;
+}
+.learn-more-btn {
+}
+.professional-type-btn {
+  background: #fff;
+  color: #6D72DE;
+
+}.professional-type-btn:hover {
+  background: var(--special-color);
+  color: #FFF;
+  border: 1px solid #FFF;
+
 }
