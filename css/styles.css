@@ -27,6 +27,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--main-bg-color);
   color: var(--text-color);
+  background-image: url('/img/decoration-left.svg'),
+    url('/img/decoration-right.svg');
+  background-position: left -128px bottom -460px,
+    right -100px top -100px;
+  background-repeat: no-repeat;
 
 }
 
@@ -68,9 +73,6 @@ img {
   align-items: center;
   padding-top: 4%;
   padding-bottom: 4%;
-  background: url('/img/decoration-right.svg') top right no-repeat,
-  url('/img/decoration-left.svg') left bottom no-repeat;
-  background-size: 30% 60%;
 
 }
 .main-heading {
@@ -218,6 +220,11 @@ input:checked + .button-toggler:before {
 }
 .membership-benefits-text:last-child {
   border-bottom: 1px solid rgba(110, 114, 142, 0.25);
+}
+.box2 .membership-benefits-text {
+  border-top: 1px solid rgba(255, 250, 250, 0.253);
+}.box2 .membership-benefits-text:last-child {
+  border-bottom: 1px solid rgba(255, 250, 250, 0.253);
 }
 .btn {
   padding: 14px 81px;
